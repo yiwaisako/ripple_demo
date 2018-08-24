@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="@drawable/ripple"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        >
+
+        <ImageView
+            android:id="@+id/thumbnail_image"
+            android:layout_width="150dp"
+            android:layout_height="119dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_alignBottom="@+id/thumbnail_image"
+            android:layout_alignTop="@+id/thumbnail_image"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/thumbnail_image"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/button_area_linear"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/update_info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title_text"
+                    android:layout_marginTop="8dp"
+                    android:drawablePadding="4dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="update_info"
+                    android:textSize="13sp"
+                    />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/button_area_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal"
+                >
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/read_button_wrapper_relative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:foreground="@drawable/ripple"
+                    android:gravity="center_horizontal"
+                    android:minHeight="33dp"
+                    android:paddingBottom="6dp"
+                    android:paddingTop="6dp"
+                    card_view:cardBackgroundColor="@color/medium_turquoise"
+                    >
+
+                    <TextView
+                        android:id="@+id/read_button_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="read"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        />
+                </android.support.v7.widget.CardView>
+
+                <android.support.v4.widget.Space
+                    android:layout_width="6dp"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/trial_reading_wrapper_relative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg"
+                    android:foreground="@drawable/ripple"
+                    android:minHeight="33dp"
+                    android:paddingBottom="6dp"
+                    android:paddingTop="6dp"
+                    card_view:cardBackgroundColor="@color/medium_turquoise"
+                    >
+
+                    <TextView
+                        android:id="@+id/trial_reading_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="trial"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
