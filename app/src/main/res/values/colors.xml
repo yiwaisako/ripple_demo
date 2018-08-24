@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="medium_turquoise">#48ced3</color>
     <color name="red">#FFFF0000</color>
+    <color name="eclipse">#393939</color>
+    <color name="malibu">#66C1ED</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

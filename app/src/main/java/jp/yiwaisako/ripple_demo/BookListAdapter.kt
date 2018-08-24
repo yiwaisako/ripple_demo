@@ -1,6 +1,9 @@
 package jp.yiwaisako.ripple_demo
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.graphics.drawable.RippleDrawable
+import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
@@ -11,6 +14,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.yqritc.recyclerviewflexibledivider.FlexibleDividerDecoration
+import java.util.*
 
 class BookListAdapter(private val context: Context) : RecyclerView.Adapter<BookListAdapter.ViewHolder>(),
         FlexibleDividerDecoration.ColorProvider,
@@ -25,6 +29,17 @@ class BookListAdapter(private val context: Context) : RecyclerView.Adapter<BookL
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.root.setOnClickListener { _ -> }
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val rippleColors = intArrayOf(R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark,
+                    R.color.medium_turquoise, R.color.eclipse, R.color.malibu
+            )
+
+            val i = Random().nextInt(rippleColors.size)
+            val mask = ContextCompat.getDrawable(context, R.drawable.mask)
+            val color = ContextCompat.getColor(context, rippleColors[i])
+            holder.root.foreground = RippleDrawable(ColorStateList.valueOf(color), null, mask).mutate()
+        }
 
         holder.title.text = "title_$position"
         Glide.with(context)
