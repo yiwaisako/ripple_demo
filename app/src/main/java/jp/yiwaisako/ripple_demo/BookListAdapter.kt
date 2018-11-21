@@ -28,8 +28,6 @@ class BookListAdapter(private val context: Context) : RecyclerView.Adapter<BookL
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.root.setOnClickListener { _ -> }
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val rippleColors = intArrayOf(R.color.colorAccent, R.color.colorPrimary, R.color.colorPrimaryDark,
                     R.color.medium_turquoise, R.color.eclipse, R.color.malibu
@@ -45,10 +43,6 @@ class BookListAdapter(private val context: Context) : RecyclerView.Adapter<BookL
         Glide.with(context)
                 .load("http://placehold.jp/24/cc9999/993333/150x119.png")
                 .into(holder.thumbnail)
-
-        holder.readButtonWrapper.setOnClickListener { _ -> }
-        holder.trialReadingWrapper.setOnClickListener { _ -> }
-
     }
 
     override fun getItemCount(): Int {
